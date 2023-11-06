@@ -3,67 +3,54 @@
 
   <div class="row mt-5">
     <div class="col-3">
-      <input type="text" class="form-control m-1" />
+      <input
+        [(ngModel)]="hero.name"
+        type="text"
+        class="form-control m-1"
+        placeholder="name"
+      />
     </div>
     <div class="col-3">
-      <input type="text" class="form-control m-1" />
+      <input
+        [(ngModel)]="hero.power"
+        type="text"
+        class="form-control m-1"
+        placeholder="power"
+      />
     </div>
     <div class="col-3">
-      <input type="text" class="form-control m-1" />
+      <input
+        [(ngModel)]="hero.image"
+        type="text"
+        class="form-control m-1"
+        placeholder="image url"
+      />
     </div>
     <div class="col-3">
-      <button class="btn form-control m-1 text-light">Create</button>
+      <button (click)="ajout()" class="btn form-control m-1 text-light">
+        Create
+      </button>
     </div>
   </div>
 
   <div class="row mt-5">
-    <div class="col-3">
+    <div
+      class="col-3"
+      *ngFor="let item of heros"
+      [ngClass]="{
+        high: item.power > 100,
+        medium: item.power < 100 && item.power>50,
+        low: item.power < 50,
+      }"
+    >
       <div class="card">
         <div class="card-image">
-          <img
-            src="https://lh3.googleusercontent.com/Ryg5ih-fOWbpEGDpbJYJz5RTq3_28Tvo2h3JQRCdiz16lw5ghitDMN6hcWA57g0d6_8VOqQYcCemRBOfZGQA64ZKkFOn71zuF1LDsXwCh4ywF-_z6VqxbBqmbQvK_-PWfZcztxDd1WDTEEUHX6GdP60"
-            alt=""
-            width="305px"
-            height="200px"
-          />
+          <img [src]="item.image" width="305px" height="200px" />
+          <!-- https://lh3.googleusercontent.com/Ryg5ih-fOWbpEGDpbJYJz5RTq3_28Tvo2h3JQRCdiz16lw5ghitDMN6hcWA57g0d6_8VOqQYcCemRBOfZGQA64ZKkFOn71zuF1LDsXwCh4ywF-_z6VqxbBqmbQvK_-PWfZcztxDd1WDTEEUHX6GdP60 -->
         </div>
         <div class="card-body">
-          <h2>Monkey d luffy</h2>
-          <p>22</p>
-        </div>
-      </div>
-    </div>
-    <!-- -->
-    <div class="col-3">
-      <div class="card">
-        <div class="card-image">
-          <img
-            src="https://lh3.googleusercontent.com/Ryg5ih-fOWbpEGDpbJYJz5RTq3_28Tvo2h3JQRCdiz16lw5ghitDMN6hcWA57g0d6_8VOqQYcCemRBOfZGQA64ZKkFOn71zuF1LDsXwCh4ywF-_z6VqxbBqmbQvK_-PWfZcztxDd1WDTEEUHX6GdP60"
-            alt=""
-            width="305px"
-            height="200px"
-          />
-        </div>
-        <div class="card-body">
-          <h2>Monkey d luffy</h2>
-          <p>22</p>
-        </div>
-      </div>
-    </div>
-    <!--  -->
-    <div class="col-3">
-      <div class="card">
-        <div class="card-image">
-          <img
-            src="https://lh3.googleusercontent.com/Ryg5ih-fOWbpEGDpbJYJz5RTq3_28Tvo2h3JQRCdiz16lw5ghitDMN6hcWA57g0d6_8VOqQYcCemRBOfZGQA64ZKkFOn71zuF1LDsXwCh4ywF-_z6VqxbBqmbQvK_-PWfZcztxDd1WDTEEUHX6GdP60"
-            alt=""
-            width="305px"
-            height="200px"
-          />
-        </div>
-        <div class="card-body">
-          <h2>Monkey d luffy</h2>
-          <p>22</p>
+          <h2>{{ item.name }}</h2>
+          <p>{{ item.power }}</p>
         </div>
       </div>
     </div>
