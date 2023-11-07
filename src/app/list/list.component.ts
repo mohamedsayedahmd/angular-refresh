@@ -8,6 +8,4 @@ import { SharedService } from '../shared.service';
 })
 export class ListComponent {
   constructor(public _shared: SharedService) {}
-
-  heros: any[] = [];
 }
