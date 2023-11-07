@@ -15,12 +15,15 @@ export class AjoutComponent {
   };
 
   ajout() {
-    this._shared.heros.push(this.hero);
-    this.hero = {
-      name: '',
-      power: 0,
-      image: '',
-    };
-    console.log(this._shared.heros);
+    // subscribe - read the response
+    this._shared.createNewHero(this.hero).subscribe(
+      (res) => {
+        console.log(res);
+      },
+      (err) => {
+        console.log(err);
+      }
+    );
+    console.log(this._shared);
   }
 }

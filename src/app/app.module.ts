@@ -7,10 +7,10 @@ import { FormsModule } from '@angular/forms';
 import { AjoutComponent } from './ajout/ajout.component';
 import { ListComponent } from './list/list.component';
 import { HeaderComponent } from './header/header.component';
-
+import { HttpClientModule } from '@angular/common/http';
 @NgModule({
   declarations: [AppComponent, AjoutComponent, ListComponent, HeaderComponent],
-  imports: [BrowserModule, AppRoutingModule, FormsModule],
+  imports: [BrowserModule, AppRoutingModule, FormsModule, HttpClientModule],
   providers: [],
   bootstrap: [AppComponent],
 })
