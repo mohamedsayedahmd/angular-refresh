@@ -18,4 +18,7 @@ export class SharedService {
   deleteHero(id: any) {
     return this.http.delete(this.url + 'hero/supprimer/' + id);
   }
+  getHeroById(id: any) {
+    return this.http.get(this.url + 'hero/getbyid/' + id);
+  }
 }

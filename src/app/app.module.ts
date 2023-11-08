@@ -9,8 +9,9 @@ import { ListComponent } from './list/list.component';
 import { HeaderComponent } from './header/header.component';
 import { HttpClientModule } from '@angular/common/http';
 import { NotfoundComponent } from './notfound/notfound.component';
+import { UpdateComponent } from './update/update.component';
 @NgModule({
-  declarations: [AppComponent, AjoutComponent, ListComponent, HeaderComponent, NotfoundComponent],
+  declarations: [AppComponent, AjoutComponent, ListComponent, HeaderComponent, NotfoundComponent, UpdateComponent],
   imports: [BrowserModule, AppRoutingModule, FormsModule, HttpClientModule],
   providers: [],
   bootstrap: [AppComponent],

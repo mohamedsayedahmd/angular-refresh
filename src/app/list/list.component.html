@@ -19,6 +19,9 @@
         <button (click)="delete(item._id)" class="btn btn-danger">
           Delete
         </button>
+        <button [routerLink]="['/update', item._id]" class="btn btn-info">
+          Edit
+        </button>
       </div>
     </div>
   </div>

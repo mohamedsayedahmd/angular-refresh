@@ -4,6 +4,7 @@ import { AjoutComponent } from './ajout/ajout.component';
 import { ListComponent } from './list/list.component';
 import { NotFoundError } from 'rxjs';
 import { NotfoundComponent } from './notfound/notfound.component';
+import { UpdateComponent } from './update/update.component';
 
 const routes: Routes = [
   {
@@ -13,6 +14,10 @@ const routes: Routes = [
   {
     path: 'list',
     component: ListComponent,
+  },
+  {
+    path: 'update/:id',
+    component: UpdateComponent,
   },
   {
     path: '',
