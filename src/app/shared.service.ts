@@ -21,4 +21,7 @@ export class SharedService {
   getHeroById(id: any) {
     return this.http.get(this.url + 'hero/getbyid/' + id);
   }
+  updateHero(id: any, hero: any) {
+    return this.http.put(this.url + 'hero/update/' + id, hero);
+  }
 }
