@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { SharedService } from '../shared.service';
 
 @Component({
@@ -6,6 +6,19 @@ import { SharedService } from '../shared.service';
   templateUrl: './list.component.html',
   styleUrls: ['./list.component.css'],
 })
-export class ListComponent {
+export class ListComponent implements OnInit {
+  heros: any;
+
   constructor(public _shared: SharedService) {}
+  ngOnInit(): void {
+    this._shared.getAllHeros().subscribe(
+      (res) => {
+        console.log(res);
+        this.heros = res;
+      },
+      (err) => {
+        console.log(err);
+      }
+    );
+  }
 }

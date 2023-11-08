@@ -12,4 +12,7 @@ export class SharedService {
   createNewHero(hero: any) {
     return this.http.post(this.url + 'hero/ajout', hero);
   }
+  getAllHeros() {
+    return this.http.get(this.url + 'hero/all');
+  }
 }
